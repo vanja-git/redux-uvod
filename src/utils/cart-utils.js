@@ -35,3 +35,14 @@ export const addToCartHelper = (cart, newItem) => {
     return updatedCart; // KONACNI RETURN
   }
 };
+
+
+export const prebrojCart = (cart) => {
+  let brojac = 0;
+  // prebrojavanje itema u cartu
+  cart.forEach(item => {
+    // const itemBrojka = item.kolicina * item.cena;
+    brojac += item.kolicina;
+  });
+  return brojac;
+};
