@@ -1,3 +1,4 @@
+import { addToCartHelper } from "../utils/cart-utils";
 
 const artikli = [
   {
@@ -39,7 +40,8 @@ const rootReducer = (state = initialState, action) => {
     case 'MOLIM_VAS_DODAJTE_OVO_U_CART':
       return {
         ...state,
-        cart: [...state.cart, action.payload]
+        // cart: [...state.cart, action.payload]
+        cart: addToCartHelper(state.cart, action.payload)
       };
 
     case "REMOVE_FROM_CART":

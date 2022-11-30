@@ -19,6 +19,8 @@ const CartItem = (props) => {
     <div className="artikal-item">
       <div className="tiple">{item.naziv}</div>
       <div className="cena">{item.cena}</div>
+
+      <div>{item.kolicina}</div>
       <button onClick={handleClickRemoveFromCart}>Remove from cart</button>
     </div>
   )
