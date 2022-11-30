@@ -29,15 +29,33 @@ const artikli = [
 
 
 const initialState = {
-  nesto: "blabla",
-  artikli: artikli
+  artikli: artikli,
+  cart:[]
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case 'NEKI_ACTION':
-      return state;
+    case 'MOLIM_VAS_DODAJTE_OVO_U_CART':
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      };
+
+    case "REMOVE_FROM_CART":
+      const idZaBrisanje = action.payload;
+      const updateCart = state.cart.filter((item) => {
+        if (item.id === idZaBrisanje) {
+          // to je taj koji ima ID koji hocemo da ga brisemo iz carta
+          return false; // false znaci nece uci u statv novog niza
+        }
+        // svi ostali ostaju u nizu
+        return true; // true znaci ostaje u nizu
+      })
+      return {
+        ...state,
+        cart: updateCart
+      };
 
     default:
       return state;

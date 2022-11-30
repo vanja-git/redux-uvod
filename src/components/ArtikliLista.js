@@ -12,7 +12,7 @@ const ArtikliLista = () => {
           {
             artikli.map((item)=>{
               return (
-                <ArtikliItem item={item}/>
+                <ArtikliItem key={item.id} item={item}/>
               )
             })
           }

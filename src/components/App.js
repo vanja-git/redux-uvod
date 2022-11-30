@@ -1,4 +1,5 @@
 import ArtikliLista from "./ArtikliLista";
+import CartLista from "./CartLista";
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <h1>Aplikacija za vezbanje klasicnog reduxa</h1>
       <ArtikliLista />
+      <CartLista />
     </div>
   );
 }
