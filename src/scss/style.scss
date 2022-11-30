@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+html {}
+
+body {}
+
+.artikli-lista {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .artikal-item {
+    outline: 1px dashed blue;
+    margin: 10px;
+    width:150px;
+    height: 150px;
+  }
+}
