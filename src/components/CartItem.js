@@ -38,7 +38,7 @@ const CartItem = (props) => {
       <div className="cena">{item.cena}</div>
 
       <div className="kolicina-widget">
-        <div onClick={handleClickKolicinaMinus}><AiOutlineMinusCircle /></div>
+        <div onClick={handleClickKolicinaMinus} className={item.kolicina > 1 ? "" : "faded"}><AiOutlineMinusCircle /></div>
         <div>{item.kolicina}</div>
         <div onClick={handleClickKolicinaPlus}><AiOutlinePlusCircle /></div>
       </div>

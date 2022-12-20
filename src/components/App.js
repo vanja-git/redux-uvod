@@ -9,8 +9,9 @@ TODO
 + dodati pravu ikonicu za korpu.. ujedno primer koriscnenja tudjih gotovih kompnenti.
 + dodati badge na ikonicu za korpu
 - kada bdue rutiranje, da se prikazuje smao cart ikonica a kad se klikne na nju ostvara se strancia sa celom korpom
-- unutar carta da imam buttone za + - kolicine
-
++ unutar carta da imam buttone za + - kolicine
++ na kolicina nula da brise iz ccarta
+- da taster minus postane iskljucen kaa je kolcina 1.
 
 */
 

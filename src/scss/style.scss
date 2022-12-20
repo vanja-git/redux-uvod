@@ -51,6 +51,11 @@ body {}
   }
 }
 
-.kolicina-widget div {
+.kolicina-widget>div {
   display: inline-block;
+  cursor: pointer;
+  &.faded {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
