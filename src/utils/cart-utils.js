@@ -84,6 +84,36 @@ export const cartMinusHelper1 = (cart, id) => {
 };
 
 
+export const cartMinusHelper2 = (cart, id) => {
+  // Verzija 2
+  // U ovoj verziji kad kolicina ddje na nula artikal ce biti obrisan iz carta.
+  //
+  let updatedCart = [];
+  cart.forEach((item) => {
+    if (item.id === id) {
+      // ovo je taj kojem treba da smanjimo kolicinu
+      // ‚rovera da li ce kolicina da mu dodje na nula
+      if (item.kolicina > 1) {
+        // znaci nakon smanjenja ipak nece biti nula
+        const pripremljeniItem = {
+          ...item,
+          kolicina: item.kolicina - 1
+        };
+        updatedCart.push(pripremljeniItem);
+      } else {
+        // ukoliko je kolicina 1 znaci da ce nakon smanjenja biti 0, znaci treba da ga brisemo iz cart-a.
+        // brisemo ga tako sto ga ne pushujemo u novi niz
+        // do nothing
+      }
+    } else {
+      // svi ostali ostaju neizmenjeni
+      updatedCart.push(item);
+    }
+  })
+  return updatedCart; //KONACNI RETURN
+};
+
+
 export const prebrojCart = (cart) => {
   let brojac = 0;
   // prebrojavanje itema u cartu
