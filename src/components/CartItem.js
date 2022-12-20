@@ -24,13 +24,21 @@ const CartItem = (props) => {
     });
   }
 
+  const handleClickKolicinaMinus = (e) => {
+    console.log('Klik na minus', id);
+    dispatch({
+      type: 'CART_MINUS',
+      payload: id
+    });
+  }
+
   return (
     <div className="artikal-item">
       <div className="tiple">{item.naziv}</div>
       <div className="cena">{item.cena}</div>
 
       <div className="kolicina-widget">
-        <div><AiOutlineMinusCircle /></div>
+        <div onClick={handleClickKolicinaMinus}><AiOutlineMinusCircle /></div>
         <div>{item.kolicina}</div>
         <div onClick={handleClickKolicinaPlus}><AiOutlinePlusCircle /></div>
       </div>

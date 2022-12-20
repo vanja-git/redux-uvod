@@ -65,6 +65,24 @@ export const cartPlusHelper = (cart, id) => {
   return updatedCart; //KONACNI RETURN
 };
 
+export const cartMinusHelper1 = (cart, id) => {
+  // Verzija 1
+  // U ovoj verziji ima nedostatak jer ce uvek da smanjuje pa moze da dodje i na kolicinu nula pa cak i manje od nule (a idelano bi bilo da artikal nestane kad kolicina dodje na nula)
+  // id je id artikla u cartu kojem treba da umanjimo kolicinu
+  const updatedCart = cart.map((item) => {
+    if (item.id === id) {
+      // ako je taj kojem menjamo kolicinu 
+      const pripremljeniItem = {
+        ...item,
+        kolicina: item.kolicina - 1
+      };
+      return pripremljeniItem;
+    }
+    return item; // svi ostali ostaju neizmenjeni.
+  });
+  return updatedCart; //KONACNI RETURN
+};
+
 
 export const prebrojCart = (cart) => {
   let brojac = 0;
