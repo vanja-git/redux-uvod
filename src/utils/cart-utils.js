@@ -1,6 +1,18 @@
 
 
-export const addToCartHelper = (cart, newItem) => {
+
+
+
+export const addToCartHelper1 = (cart, newItem) => {
+  // Verzija 1.
+  // u ovoj verziji funkcija dodaje u cart ali ne proverava da li ta stavka vec postoji u cartu pa parvu duplikate i ignorise kolicine.
+  const updatedCart = [...cart, newItem];
+  return updatedCart;
+};
+
+export const addToCartHelper2 = (cart, newItem) => {
+  // Verzija 2.
+  // U ovoj verziji je unapredjeno da se ne stvaraju duplikatim ukoliko taj proizvod vec postoji u cartu, nego se samo uveca kolicina.
   const id = newItem.id;
   // 1) najpre provera da l ito vec ima u cartu
   let vecPostoji = false;

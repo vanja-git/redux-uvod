@@ -3,6 +3,13 @@ import CartIcon from "./CartIcon";
 import CartLista from "./CartLista";
 
 
+/*
+TODO
+- funkcija za shop add to cart i slicne, da imaju vise verzija
+- dodati pravu ikonicu za korpu.. ujedno primer koriscnenja tudjih gotovih kompnenti.
+
+*/
+
 function App() {
   return (
     <div className="App">
