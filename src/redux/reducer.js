@@ -1,4 +1,4 @@
-import { addToCartHelper2 } from "../utils/cart-utils";
+import { addToCartHelper2, cartPlusHelper } from "../utils/cart-utils";
 
 const artikli = [
   {
@@ -58,6 +58,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         cart: updateCart
       };
+
+      case "CART_PLUS":
+        return {
+          ...state,
+          cart: cartPlusHelper(state.cart, action.payload)
+        }
 
     default:
       return state;

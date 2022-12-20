@@ -28,7 +28,7 @@ export const addToCartHelper2 = (cart, newItem) => {
       if (id === item.id) {
         // to je taj kojeg OPET dodajemo
         const updatedItem = {
-          ...item, 
+          ...item,
           kolicina: item.kolicina + 1
         }
         return updatedItem;
@@ -46,6 +46,23 @@ export const addToCartHelper2 = (cart, newItem) => {
     const updatedCart = [...cart, pripremljeniItem];
     return updatedCart; // KONACNI RETURN
   }
+};
+
+
+export const cartPlusHelper = (cart, id) => {
+  // id je id artikla u cartu kojem treba da uvecamo kolicinu
+  const updatedCart = cart.map((item) => {
+    if (item.id === id) {
+      // ako je taj kojem menjamo kolicinu 
+      const pripremljeniItem = {
+        ...item,
+        kolicina: item.kolicina + 1
+      };
+      return pripremljeniItem;
+    }
+    return item; // svi ostali ostaju neizmenjeni.
+  });
+  return updatedCart; //KONACNI RETURN
 };
 
 
