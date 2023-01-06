@@ -30,12 +30,19 @@ const artikli = [
 
 
 const initialState = {
+  nevidljivaRuta: 'HOME',
   artikli: artikli,
-  cart:[]
+  cart: []
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+
+    case 'SET_ROUTE':
+      return {
+        ...state,
+        nevidljivaRuta: action.payload
+      }
 
     case 'MOLIM_VAS_DODAJTE_OVO_U_CART':
       return {
@@ -59,17 +66,17 @@ const rootReducer = (state = initialState, action) => {
         cart: updateCart
       };
 
-      case "CART_PLUS":
-        return {
-          ...state,
-          cart: cartPlusHelper(state.cart, action.payload)
-        };
+    case "CART_PLUS":
+      return {
+        ...state,
+        cart: cartPlusHelper(state.cart, action.payload)
+      };
 
-        case "CART_MINUS":
-        return {
-          ...state,
-          cart: cartMinusHelper2(state.cart, action.payload)
-        };
+    case "CART_MINUS":
+      return {
+        ...state,
+        cart: cartMinusHelper2(state.cart, action.payload)
+      };
 
     default:
       return state;

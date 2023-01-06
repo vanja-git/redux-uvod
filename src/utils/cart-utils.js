@@ -1,8 +1,3 @@
-
-
-
-
-
 export const addToCartHelper1 = (cart, newItem) => {
   // Verzija 1.
   // u ovoj verziji funkcija dodaje u cart ali ne proverava da li ta stavka vec postoji u cartu pa parvu duplikate i ignorise kolicine.

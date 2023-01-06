@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux";
 import ArtikliLista from "./ArtikliLista";
 import CartIcon from "./CartIcon";
 import CartLista from "./CartLista";
+import NevidljiviRuter from "./NevidljiviRuter";
 
 
 /*
@@ -16,12 +18,34 @@ TODO
 */
 
 function App() {
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
       <h1>Aplikacija za vezbanje klasicnog reduxa</h1>
-      <CartIcon />
-      <ArtikliLista />
-      <CartLista />
+      <nav>
+        <div onClick={() => {
+          dispatch({
+            type: 'SET_ROUTE',
+            payload: 'HOME'
+          })
+        }}>Pocetna</div>
+        <div onClick={() => {
+          dispatch({
+            type: 'SET_ROUTE',
+            payload: 'ABOUT'
+          })
+        }}>About</div>
+        <div onClick={() => {
+          dispatch({
+            type: 'SET_ROUTE',
+            payload: 'CART'
+          })
+        }}>
+          <CartIcon />
+        </div>
+      </nav>
+      <NevidljiviRuter />
     </div>
   );
 }
